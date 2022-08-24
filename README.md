@@ -31,3 +31,5 @@ Output:
 
 ![Light](https://github.com/ymg2006/FluentAvalonia.ProgressRing/blob/main/Preview/Light.gif)
 ![Dark](https://github.com/ymg2006/FluentAvalonia.ProgressRing/blob/main/Preview/Dark.gif)
+
+Seems that there is a glitch in output but its only a gif repetition, the control's animation is smooth.
