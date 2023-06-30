@@ -2,6 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
+using Avalonia.Layout;
 
 namespace FluentAvalonia.UI.Controls
 {
@@ -70,17 +71,19 @@ namespace FluentAvalonia.UI.Controls
             set => SetValue(EndAngleProperty, value);
         }
 
-        protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
+        protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
         {
             base.OnPropertyChanged(change);
+            var e = change as AvaloniaPropertyChangedEventArgs<bool>;
+            if (e is null) return;
 
-            if (change.Property == IsIndeterminateProperty)
+            if (e.Property == IsIndeterminateProperty)
             {
-                UpdatePseudoClasses(change.NewValue.GetValueOrDefault<bool>(), null);
+                UpdatePseudoClasses(e.NewValue.GetValueOrDefault(), null);
             }
-            else if (change.Property == PreserveAspectProperty)
+            else if (e.Property == PreserveAspectProperty)
             {
-                UpdatePseudoClasses(null, change.NewValue.GetValueOrDefault<bool>());
+                UpdatePseudoClasses(null, e.NewValue.GetValueOrDefault());
             }
         }
 
