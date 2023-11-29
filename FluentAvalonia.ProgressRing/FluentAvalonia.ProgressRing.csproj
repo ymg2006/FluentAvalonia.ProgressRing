@@ -23,8 +23,8 @@
 
   <PropertyGroup>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.69.1</Version>
-    <AssemblyVersion>1.69.1.0</AssemblyVersion>
+    <Version>1.69.2</Version>
+    <AssemblyVersion>1.69.2.0</AssemblyVersion>
     <Authors>https://github.com/ymg2006</Authors>
   </PropertyGroup>
 
@@ -38,6 +38,14 @@
 
   <ItemGroup>
     <PackageReference Include="FluentAvaloniaUI" Version="2.0.4" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
